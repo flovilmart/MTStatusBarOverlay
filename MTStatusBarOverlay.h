@@ -117,6 +117,7 @@ typedef enum MTMessageType {
 // the delegate of the overlay
 @property (nonatomic, unsafe_unretained) id<MTStatusBarOverlayDelegate> delegate;
 
+
 #pragma mark - Appearance
 
 // Will take precedence over other values (message, error and finish)
@@ -137,6 +138,7 @@ typedef enum MTMessageType {
 @property (nonatomic, strong) UIFont * errorTextFont UI_APPEARANCE_SELECTOR;
 @property (nonatomic, strong) UIFont * finishedTextFont UI_APPEARANCE_SELECTOR;
 
+
 @property (nonatomic, strong) UIColor * detailViewBackgroundColor UI_APPEARANCE_SELECTOR;
 @property (nonatomic, strong) UIColor * detailViewBorderColor UI_APPEARANCE_SELECTOR;
 @property UIActivityIndicatorViewStyle activityIndicatorStyle UI_APPEARANCE_SELECTOR;
@@ -146,7 +148,6 @@ typedef enum MTMessageType {
 @property (nonatomic, strong) UIColor * progressViewBackgroundColor UI_APPEARANCE_SELECTOR;
 @property (nonatomic) float progressViewAlpha UI_APPEARANCE_SELECTOR;
 @property (nonatomic, strong) UIImage * progressViewImage UI_APPEARANCE_SELECTOR;
-
 
 
 //===========================================================

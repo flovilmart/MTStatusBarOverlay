@@ -86,6 +86,36 @@ MAX([UIApplication sharedApplication].statusBarFrame.size.width, [UIApplication 
 #define kDarkThemeDetailViewBorderColor				[UIColor whiteColor]
 #define kDarkThemeHistoryTextColor					[UIColor whiteColor]
 
+
+
+///////////////////////////////////////////////////////
+// Light Theme (for UIStatusBarStyleDefault)
+///////////////////////////////////////////////////////
+/*
+#define kLightThemeTextColor						[UIColor icgwPurpleColor]
+ #define kLightThemeErrorMessageTextColor            [UIColor blackColor] // [UIColor colorWithRed:0.494898f green:0.330281f blue:0.314146f alpha:1.0f]
+ #define kLightThemeFinishedMessageTextColor         [UIColor icgwPurpleColor] // [UIColor colorWithRed:0.389487f green:0.484694f blue:0.38121f alpha:1.0f]
+ #define kLightThemeShadowColor                      [UIColor clearColor]
+ #define kLightThemeErrorMessageShadowColor          [UIColor clearColor]
+ #define kLightThemeFinishedMessageShadowColor       [UIColor clearColor]
+ #define kLightThemeActivityIndicatorViewStyle		UIActivityIndicatorViewStyleGray
+ #define kLightThemeDetailViewBackgroundColor		[UIColor clearColor]
+ #define kLightThemeDetailViewBorderColor			[UIColor clearColor]
+ #define kLightThemeHistoryTextColor					[UIColor icgwPurpleColor]
+ 
+ 
+ ///////////////////////////////////////////////////////
+ // Dark Theme (for UIStatusBarStyleBlackOpaque)
+ ///////////////////////////////////////////////////////
+ 
+ #define kDarkThemeTextColor							[UIColor colorWithRed:0.749f green:0.749f blue:0.749f alpha:1.0f]
+ #define kDarkThemeErrorMessageTextColor             [UIColor colorWithRed:0.749f green:0.749f blue:0.749f alpha:1.0f] // [UIColor colorWithRed:0.918367f green:0.48385f blue:0.423895f alpha:1.0f]
+ #define kDarkThemeFinishedMessageTextColor          [UIColor colorWithRed:0.749f green:0.749f blue:0.749f alpha:1.0f] // [UIColor colorWithRed:0.681767f green:0.918367f blue:0.726814f alpha:1.0f]
+ #define kDarkThemeActivityIndicatorViewStyle		UIActivityIndicatorViewStyleWhite
+ #define kDarkThemeDetailViewBackgroundColor			[UIColor colorWithRed:0.3f green:0.3f blue:0.3f alpha:1.0f]
+ #define kDarkThemeDetailViewBorderColor				[UIColor whiteColor]
+ #define kDarkThemeHistoryTextColor					[UIColor whiteColor]
+ */
 ///////////////////////////////////////////////////////
 // Progress
 ///////////////////////////////////////////////////////
@@ -435,6 +465,10 @@ kDetailViewWidth, kHistoryTableRowHeight*kMaxHistoryTableRowCount + kStatusBarHe
         [self addSubview:backgroundView_];
         
         
+<<<<<<< HEAD
+=======
+        //[self applyDefaultTheme];
+>>>>>>> bd954fdf39d5e484200c744375631c635f73a80f
 		// listen for changes of status bar frame
 		[[NSNotificationCenter defaultCenter] addObserver:self
 												 selector:@selector(didChangeStatusBarFrame:)
@@ -1253,6 +1287,7 @@ kDetailViewWidth, kHistoryTableRowHeight*kMaxHistoryTableRowCount + kStatusBarHe
     UIColor * finalShadowColor = self.customShadowColor;
     UIFont * aFont;
     UIFont * finalFont = self.customTextFont;
+
     switch(messageType) {
         case MTMessageTypeFinish:
             aTextColor = self.finishedTextColor;
@@ -1294,7 +1329,7 @@ kDetailViewWidth, kHistoryTableRowHeight*kMaxHistoryTableRowCount + kStatusBarHe
     self.activityIndicator.activityIndicatorViewStyle = self.activityIndicatorStyle;
     
     if ([self.activityIndicator respondsToSelector:@selector(setColor:)]) {
-        [self.activityIndicator setColor:self.customTextColor];
+        [self.activityIndicator setColor:aTextColor];
     }
     
     self.detailView.backgroundColor = self.detailViewBackgroundColor;
