@@ -134,7 +134,7 @@ typedef enum MTMessageType {
 @property (nonatomic, strong) UIColor * errorShadowColor UI_APPEARANCE_SELECTOR;
 @property (nonatomic, strong) UIColor * finishedShadowColor UI_APPEARANCE_SELECTOR;
 
-@property (nonatomic, strong) UIFont * textFont UI_APPEARANCE_SELECTOR
+@property (nonatomic, strong) UIFont * textFont UI_APPEARANCE_SELECTOR;
 @property (nonatomic, strong) UIFont * errorTextFont UI_APPEARANCE_SELECTOR;
 @property (nonatomic, strong) UIFont * finishedTextFont UI_APPEARANCE_SELECTOR;
 
