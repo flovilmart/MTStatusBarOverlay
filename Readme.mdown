@@ -58,7 +58,9 @@ You have to customize the appearance before using the overlay, otherwise, your c
     
     id appearance = [MTStatusBarOverlay appearanceWithDefaultTheme:YES];
 
-    [appearance setTextColor:textColo];
+
+	// customize the text one by one
+    [appearance setTextColor:textColor];
     [appearance setTextFont:textFont];
     [appearance setFinishedTextColor:finishColor];
     [appearance setFinishedTextFont:finishFont];
@@ -68,6 +70,12 @@ You have to customize the appearance before using the overlay, otherwise, your c
     [appearance setErrorShadowColor:[UIColor clearColor]];
     [appearance setFinishedShadowColor:[UIColor clearColor]];
     
+    // customize all texts at once
+    [appearance setCustomTextColor:textColor];
+    [appearance setCustomTextFont:textFont];
+    [appearance setCustomShadowColor:[UIColor clearColor]];
+    // The values precedently set will have no effet 
+    [appearance setTextFont:textFont]; // has no effet, the font will be the custom one
     // sets the overlay background color
     [appearance setOverlayBackgroundColor:[UIColor colorWithRed:0.93f green:0.93f blue:0.93f alpha:1.f]];
     

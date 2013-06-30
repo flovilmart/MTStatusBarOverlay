@@ -1248,8 +1248,11 @@ kDetailViewWidth, kHistoryTableRowHeight*kMaxHistoryTableRowCount + kStatusBarHe
 
     NSArray * labels = @[self.statusLabel1, self.statusLabel2, self.finishedLabel];
     UIColor * aTextColor;
+    UIColor * finalTextColor = self.customTextColor;
     UIColor * aShadowColor;
+    UIColor * finalShadowColor = self.customShadowColor;
     UIFont * aFont;
+    UIFont * finalFont = self.customTextFont;
     switch(messageType) {
         case MTMessageTypeFinish:
             aTextColor = self.finishedTextColor;
@@ -1267,13 +1270,22 @@ kDetailViewWidth, kHistoryTableRowHeight*kMaxHistoryTableRowCount + kStatusBarHe
             aFont = self.textFont;
             break;
     }
+    if(finalTextColor){
+        aTextColor = finalTextColor;
+    }
+    if (finalShadowColor) {
+        aShadowColor = finalShadowColor;
+    }
+    if (finalFont) {
+        aFont = finalFont;
+    }
     for (UILabel * label in labels) {
         if (aTextColor) {
             label.textColor = aTextColor;
-        }
+        } 
         if(aShadowColor){
             label.shadowColor = aShadowColor;
-        }
+        } 
         if(aFont){
             label.font = aFont;
         }
@@ -1282,7 +1294,7 @@ kDetailViewWidth, kHistoryTableRowHeight*kMaxHistoryTableRowCount + kStatusBarHe
     self.activityIndicator.activityIndicatorViewStyle = self.activityIndicatorStyle;
     
     if ([self.activityIndicator respondsToSelector:@selector(setColor:)]) {
-        [self.activityIndicator setColor:self.textColor];
+        [self.activityIndicator setColor:self.customTextColor];
     }
     
     self.detailView.backgroundColor = self.detailViewBackgroundColor;
