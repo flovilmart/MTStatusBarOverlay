@@ -42,6 +42,50 @@ You can use the custom status bar like this:
      overlay.progress = 1.0;
 
 
+Customizing appearance
+------------------
+
+You have to customize the appearance before using the overlay, otherwise, your changes won't appear...
+
+	
+	UIColor * errorColor, finishColor, textColor;
+	UIFont * textFont, errorFont, finishFont;
+	
+	// loads the appearance proxy with the default values
+	// pass NO to have no default theme values
+	// Do NOT call directly [MTStatusBarOverlay appearance]
+    
+    
+    id appearance = [MTStatusBarOverlay appearanceWithDefaultTheme:YES];
+
+    [appearance setTextColor:textColo];
+    [appearance setTextFont:textFont];
+    [appearance setFinishedTextColor:finishColor];
+    [appearance setFinishedTextFont:finishFont];
+    [appearance setErrorTextColor:errorColor];
+    [appearance setErrorTextFont:errorFont];
+    [appearance setShadowColor:[UIColor clearColor]];
+    [appearance setErrorShadowColor:[UIColor clearColor]];
+    [appearance setFinishedShadowColor:[UIColor clearColor]];
+    
+    // sets the overlay background color
+    [appearance setOverlayBackgroundColor:[UIColor colorWithRed:0.93f green:0.93f blue:0.93f alpha:1.f]];
+    
+    // sets the overlay background image
+    [appearance setOverlayBackgroundImage:nil];
+    
+    // set the progress view background color
+    [appearance setProgressViewBackgroundColor:[UIColor clearColor]];
+    
+    
+    // show the apperance after a 0 delay to change the runloop so the appearance proxy have time to update
+    double delayInSeconds = 0.f;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        [[MTStatusBarOverlay sharedInstance] postMessage:@"Hello World!" duration:10.f];
+    });
+
+
 Adding MTStatusBarOverlay to your project
 ------------------
 MTStatusBarOverlay is compiled as a static library. You have two options for integrating it into you own project, after cloning the MTStatusBarOverlay git repository with the terminal-command: `git clone git://github.com/myell0w/MTStatusBarOverlay.git`

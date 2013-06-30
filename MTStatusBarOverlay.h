@@ -117,6 +117,25 @@ typedef enum MTMessageType {
 // the delegate of the overlay
 @property (nonatomic, unsafe_unretained) id<MTStatusBarOverlayDelegate> delegate;
 
+#pragma mark - Appearance
+@property (nonatomic, strong) UIColor * textColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor * errorTextColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor * finishedTextColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor * shadowColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor * errorShadowColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor * finishedShadowColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor * detailViewBackgroundColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor * detailViewBorderColor UI_APPEARANCE_SELECTOR;
+@property UIActivityIndicatorViewStyle activityIndicatorStyle UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor * historyTextColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor * overlayBackgroundColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIImage * overlayBackgroundImage UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor * progressViewBackgroundColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic) float progressViewAlpha UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIImage * progressViewImage UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIFont * textFont UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIFont * errorTextFont UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIFont * finishedTextFont UI_APPEARANCE_SELECTOR;
 
 //===========================================================
 #pragma mark -
@@ -124,6 +143,8 @@ typedef enum MTMessageType {
 //===========================================================
 
 // Singleton Instance
++(id) appearanceWithDefaultTheme:(BOOL) useDefault;
+
 + (MTStatusBarOverlay *)sharedInstance;
 + (MTStatusBarOverlay *)sharedOverlay;
 
