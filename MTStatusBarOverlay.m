@@ -464,11 +464,7 @@ kDetailViewWidth, kHistoryTableRowHeight*kMaxHistoryTableRowCount + kStatusBarHe
         
         [self addSubview:backgroundView_];
         
-        
-<<<<<<< HEAD
-=======
-        //[self applyDefaultTheme];
->>>>>>> bd954fdf39d5e484200c744375631c635f73a80f
+  
 		// listen for changes of status bar frame
 		[[NSNotificationCenter defaultCenter] addObserver:self
 												 selector:@selector(didChangeStatusBarFrame:)
