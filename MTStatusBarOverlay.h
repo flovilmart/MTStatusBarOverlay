@@ -116,8 +116,6 @@ typedef enum MTMessageType {
 @property (nonatomic, copy) NSString *detailText;
 // the delegate of the overlay
 @property (nonatomic, unsafe_unretained) id<MTStatusBarOverlayDelegate> delegate;
-
-
 /*
  #define kLightThemeTextColor						[UIColor icgwPurpleColor]
  #define kLightThemeErrorMessageTextColor            [UIColor blackColor] // [UIColor colorWithRed:0.494898f green:0.330281f blue:0.314146f alpha:1.0f]
