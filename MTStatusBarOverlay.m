@@ -463,6 +463,10 @@ kDetailViewWidth, kHistoryTableRowHeight*kMaxHistoryTableRowCount + kStatusBarHe
 		canRemoveImmediateMessagesFromQueue_ = YES;
         
         [self addSubview:backgroundView_];
+
+        
+  
+
 		// listen for changes of status bar frame
 		[[NSNotificationCenter defaultCenter] addObserver:self
 												 selector:@selector(didChangeStatusBarFrame:)
@@ -1281,6 +1285,7 @@ kDetailViewWidth, kHistoryTableRowHeight*kMaxHistoryTableRowCount + kStatusBarHe
     UIColor * finalShadowColor = self.customShadowColor;
     UIFont * aFont;
     UIFont * finalFont = self.customTextFont;
+
     switch(messageType) {
         case MTMessageTypeFinish:
             aTextColor = self.finishedTextColor;

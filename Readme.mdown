@@ -61,6 +61,7 @@ You have to customize the appearance before using the overlay, otherwise, your c
 
 	// customize the text one by one
     [appearance setTextColor:textColor];
+
     [appearance setTextFont:textFont];
     [appearance setFinishedTextColor:finishColor];
     [appearance setFinishedTextFont:finishFont];
@@ -70,6 +71,7 @@ You have to customize the appearance before using the overlay, otherwise, your c
     [appearance setErrorShadowColor:[UIColor clearColor]];
     [appearance setFinishedShadowColor:[UIColor clearColor]];
     
+
     // customize all texts at once
     [appearance setCustomTextColor:textColor];
     [appearance setCustomTextFont:textFont];
